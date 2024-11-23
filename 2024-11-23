@@ -1,1 +1,77 @@
-test
+# TIL
+
+<img width="900" alt="image" src="https://github.com/user-attachments/assets/0e77d42c-e233-4803-ad5c-3bf70ae0d89e">
+<img width="928" alt="image" src="https://github.com/user-attachments/assets/62aa18b2-adb3-4e63-9007-2bb2f1bf9eba">
+<img width="1280" alt="image" src="https://github.com/user-attachments/assets/e87fd4a1-1ff2-470d-801b-eb4af3bb24f1">
+
+# 일본 IT 자격증 안내
+
+일본에서 취득할 수 있는 주요 IT 자격증 시험에 대해 소개합니다. 시험의 난이도(LV)와 특징, 그리고 자격증의 활용 방안 등을 정리했습니다.
+
+---
+
+## LV1: **IP** (Information Processing)
+- **한국의 정보처리기능사에 해당**
+- 상시 시험으로 **급한 경우 가장 먼저 취득을 추천**
+- **CBT 형식**, 전 문제 객관식
+- **다음 단계로 바로 넘어갈 자신이 있다면 건너뛸 수 있음**
+
+---
+
+## LV2: **FE** (Fundamental Information Technology Engineer)
+- **한국의 정보처리산업기사에 해당**
+- 상시 시험으로 **IP를 스킵하고 바로 도전 가능**
+- **CBT 형식**, 전 문제 객관식
+- **회사에서 자격수당**을 지급하거나, 모집 요강에서 요구하는 경우가 있음
+
+---
+
+## LV3: **AP** (Applied Information Technology Engineer)
+- **한국의 정보처리기사에 해당**
+- 일본 IT 자격시험의 **등용문**
+- **연 2회(4월, 10월) 시행**
+- **오후 시험**에 주관식/서술형(최대 80자)이 포함됨
+
+---
+
+## LV4: 전문 분야 자격증
+### 주요 시험
+1. **SC** (Information Security Specialist)
+   - 정보보안에 특화된 시험
+   - **연 2회 시행 (LV4 중 유일)**, 시험 구성은 다음과 같음:
+     - **오전 1/2**: 기본 지식 테스트
+     - **오후 1/2**: 심화 문제 해결
+2. **DB** (Database Specialist)
+   - 데이터베이스에 특화된 시험
+3. **NW** (Network Specialist)
+   - 네트워크에 특화된 시험
+4. **ES** (Embedded Systems Specialist)
+   - 임베디드 시스템에 특화된 시험
+   - 비주류 분야로, 응시자가 매우 적음
+   - 취득 후 활용 방안이 제한적임
+
+### 기타 시험
+- **논술형 문제(최대 1200자)**가 포함된 시험
+- 주로 **경영진 및 관리자**가 응시
+- 개발자 중에는 **PM(Project Manager) 자격증**을 많이 취득함
+  - **개발 경력 3년 이상**일 때 추천
+  - PM 자격증은 **이직 메리트**가 크며, 프로젝트 관리에 유리
+
+---
+
+## 인기 자격증 5선
+1. **FE**
+2. **AP**
+3. **SC**
+4. **DB**
+5. **NW**
+
+## 비주류 및 관리자용
+- **ES**: 응시자 적음, 활용도 낮음
+- **기타 LV4 논술형 시험**: 경영진 및 관리자용, 개발자 응시 비율 낮음
+
+---
+
+### 추천 로드맵
+1. **입문자**: IP → FE → AP
+2. **경력 개발자**: AP → SC/DB/NW → PM
