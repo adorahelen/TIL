@@ -1,0 +1,111 @@
+XWiki와 Solr 엔진을 Docker에서 적용하는 방법을 한국어로 설명드리겠습니다. Solr는 XWiki에서 고급 전체 텍스트 검색 기능을 제공하는 데 사용됩니다. Docker를 사용하여 XWiki와 Solr를 설정하는 방법은 다음과 같습니다.
+
+1. XWiki와 Solr를 위한 Docker Compose 설정
+
+Docker Compose를 사용하여 XWiki와 Solr 서비스의 구성을 정의합니다. 이를 통해 두 애플리케이션의 컨테이너를 쉽게 관리할 수 있습니다.
+
+1.1. docker-compose.yml 파일 생성
+
+먼저 XWiki와 Solr 설정을 위한 새로운 디렉토리를 생성합니다:
+
+mkdir xwiki-solr && cd xwiki-solr
+
+그 후 docker-compose.yml 파일을 다음 내용으로 생성합니다:
+
+version: '3'
+
+services:
+xwiki:
+image: xwiki:latest
+container_name: xwiki
+ports:
+- "8080:8080"
+environment:
+- DB_USER=xwiki
+- DB_PASSWORD=xwiki
+- DB_DATABASE=xwiki
+- DB_HOST=xwiki-db
+- SOLR_URL=http://solr:8983/solr/xwiki
+depends_on:
+- xwiki-db
+- solr
+
+xwiki-db:
+image: postgres:13
+container_name: xwiki-db
+environment:
+- POSTGRES_USER=xwiki
+- POSTGRES_PASSWORD=xwiki
+- POSTGRES_DB=xwiki
+volumes:
+- xwiki-db-data:/var/lib/postgresql/data
+
+solr:
+image: solr:latest
+container_name: solr
+ports:
+- "8983:8983"
+environment:
+- SOLR_HOME=/opt/solr/server/solr
+volumes:
+- solr-data:/var/solr
+
+volumes:
+xwiki-db-data:
+solr-data:
+
+설명:
+•	xwiki: XWiki 컨테이너. PostgreSQL 데이터베이스(xwiki-db)와 Solr 서비스(solr)에 연결됩니다.
+•	xwiki-db: XWiki의 데이터베이스로 사용되는 PostgreSQL 컨테이너.
+•	solr: XWiki의 검색 기능을 처리하는 Solr 컨테이너.
+•	SOLR_URL: XWiki가 Solr 서비스와 연결되는 중요한 환경 변수입니다. 이 값은 Solr에서 색인 및 검색을 수행하는 데 사용됩니다.
+
+2. Docker Compose로 컨테이너 시작
+
+모든 서비스를 시작하려면 다음 명령어를 실행합니다 (XWiki, PostgreSQL, Solr):
+
+docker-compose up -d
+
+이 명령어는 필요한 이미지를 다운로드하고, 컨테이너를 생성한 후 백그라운드에서 실행합니다.
+
+3. XWiki에서 Solr 사용 설정
+
+컨테이너가 실행된 후, XWiki에서 Solr를 검색 엔진으로 설정하려면 다음 단계를 따릅니다:
+1.	XWiki 관리자 패널에 접근
+브라우저에서 http://localhost:8080으로 접속하여 XWiki 설치 페이지를 엽니다.
+2.	XWiki 관리자 계정으로 로그인
+로그인 후, XWiki 관리 섹션으로 이동합니다.
+3.	Solr 통합 설정
+XWiki 관리자 패널에서 검색 설정으로 이동합니다:
+•	Wiki Administration > Search로 이동.
+•	Search Engine 섹션에서 Solr을 선택합니다.
+•	Solr URL에 http://solr:8983/solr/xwiki를 입력합니다 (이 값은 Solr 컨테이너의 URL 및 코어 이름과 일치해야 합니다).
+4.	변경 사항 저장
+검색 엔진을 설정한 후, 설정을 저장합니다.
+
+4. Solr와 XWiki 통합 확인
+    1.	Solr 코어 설정
+          Solr는 컨테이너가 시작될 때 xwiki 코어를 자동으로 생성합니다. 이를 확인하려면 Solr 웹 인터페이스(http://localhost:8983)로 접속하여 xwiki 코어가 표시되는지 확인합니다.
+    2.	검색 기능 테스트
+          XWiki 내에서 검색을 수행하여 Solr가 검색 결과를 처리하는지 확인합니다. 모든 설정이 제대로 되었다면, Solr가 검색 결과를 제공할 것입니다.
+
+5. 문제 해결
+   •	Solr에 색인되지 않음: XWiki가 Solr에 콘텐츠를 색인하지 않으면, Solr 인덱스를 재빌드해야 할 수 있습니다. 관리자 > 검색으로 이동하여 인덱스를 재빌드할 수 있는 옵션을 사용하세요.
+   •	로그 확인: 문제가 발생한 경우, 각 컨테이너의 로그를 확인하여 문제를 파악할 수 있습니다:
+
+docker logs xwiki
+docker logs solr
+
+6. 컨테이너 중지 및 제거
+
+컨테이너를 중지하려면 다음 명령어를 사용합니다:
+
+docker-compose down
+
+이 명령어는 컨테이너를 중지하고 제거합니다. 데이터를 청소하려면 볼륨도 함께 제거할 수 있습니다:
+
+docker-compose down -v
+
+요약
+
+위의 단계를 따르면 XWiki와 Solr을 Docker에서 설정하여 고급 검색 기능을 제공하는 환경을 구축할 수 있습니다. Docker Compose를 사용하면 XWiki와 Solr 컨테이너를 쉽게 관리할 수 있으며, Solr는 XWiki 콘텐츠에 대한 빠르고 확장 가능한 검색 인덱싱을 제공합니다.
