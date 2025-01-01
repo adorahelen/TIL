@@ -5,7 +5,7 @@
 02. 정보처리기사 실기 (4월)
   * 차세대 보안리더 BOB 접수 (5월)
 
-![img.png](NewYearPlan.png)
+![img.png](../img/2025/NewYearPlan.png)
 
 
 # B. 네트워크 보안 시스템 파악
