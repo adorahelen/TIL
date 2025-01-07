@@ -1,4 +1,5 @@
 # TIL
+$ git config --global http.postBuffer 524288000
 
 ## police
 <img width="715" alt="image" src="https://github.com/user-attachments/assets/b4959c58-e0a5-4911-bcf9-93c54c4a63c1" />
