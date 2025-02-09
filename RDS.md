@@ -1,5 +1,8 @@
 # RDS
 
+- EC2 , RDS 둘다 IP 접든 제한 걸어 둘 수 있음
+- 특정 iP 가 아니면 접근 할 수 없도록 
+
 ## MySQL 데이터베이스 목록
 
 ```sql
@@ -43,7 +46,10 @@ mysql> show databases;
 ## 조작 
 
 - show databases;
+- USE fossilfuel2;
 - SHOW TABLES;
+  SELECT * FROM members;
+
 
 
 ### 1. `fossilfuel2` 데이터베이스 생성
