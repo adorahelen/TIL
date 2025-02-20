@@ -1,10 +1,10 @@
 # EC2 프리티어 메모리 부족 현상 해결
 
 ### 문제상황 (빌드 무한로딩)
-![img.png](img/2025/resolve.png)
+![img.png](../img/2025/resolve.png)
 
 ### 해결 (스왑 메모리 적용)
-![img_1.png](img/2025/problem.png)
+![img_1.png](../img/2025/problem.png)
 
 ## 방법
    ```bash
