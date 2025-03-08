@@ -51,13 +51,13 @@
 - 오후 14시 36분 서울(한강대교)에서 접속 : 211.36.133.75
   * 위도 경도가 한강대교 고정이라 유동 IP 라고 생각됨 
 
-![img_8.png](../img/2025/crime1.png)
+![img_8.png](../../img/2025/crime1.png)
 
-![img_11.png](../img/2025/crime3.png)
+![img_11.png](../../img/2025/crime3.png)
 
-![img_10.png](../img/2025/crime2.png)
+![img_10.png](../../img/2025/crime2.png)
 
-![img_12.png](../img/2025/crime4.png)
+![img_12.png](../../img/2025/crime4.png)
 
 
 # 3-2. 모바일 포렌식
@@ -66,17 +66,17 @@
 
 - 01 안드로이드 스튜디오 설치
 
-![img.png](../img/2025/AndroidStudio.png)
+![img.png](../../img/2025/AndroidStudio.png)
 
 - 02 연결 (USB & 개발자 모드)
   * 안드로이드 기기에서 개발자 옵션 → USB 디버깅 활성화
-![img_1.png](../img/2025/AdConnect.png)
+![img_1.png](../../img/2025/AdConnect.png)
 
 - 03 ADB 설치 (SDK)
   * adb devices (아래에 있는 해당 경로에서) 로 디바이스 연결 확인
 > /Users/사용자 이름/Library/Android/sdk/platform-tools
 
-![img_2.png](../img/2025/ADB.png)
+![img_2.png](../../img/2025/ADB.png)
 
 - 04 포렌식 환경 설정
 > .bash_profile 파일 생성, 안에 환경변수 입력하고 실행

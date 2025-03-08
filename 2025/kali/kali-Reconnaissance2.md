@@ -33,7 +33,7 @@
     * 관리자가 잘 모르는 서브 도메인이 존재하면 취약점 조치나 패치가 미흡함
 
 ### dnsenum (Kali-linux tool)
-![dnsenum.png](../img/2024/dnsenum.png)
+![dnsenum.png](../../img/2024/dnsenum.png)
 
 - 호스트 IP 주소, 도메인의 DNS 서버, 도메인 MX 레코드, 서브 도메인
 - └─$ dnsenum fossilfuel.site  

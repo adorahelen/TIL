@@ -1,7 +1,21 @@
-# 타임존 설정(for Log)
+
+# 1.Logback
+## TimeBasedRollingPolicy
+* 새로운 날짜가 되었을 때 새로운 로그 파일이 생성되고,
+* 기존의 fossilfuel-web.log 파일이 이름이 변경(회전)되는 방식으로 동작
+---
+
+# 2.SCP
+- ✅ logs 디렉토리 전체를 복사하는 명령어
+> scp -i ~/AWS/aws-study.pem -r ec2-user@3.37.171.152:/home/ec2-user/FossilFuel/build/libs/logs ~/Downloads/
+
+- 📌 참고: logs 디렉토리 내부 파일만 복사하고 싶다면?
+> scp -i ~/AWS/aws-study.pem -r ec2-user@3.37.171.152:/home/ec2-user/FossilFuel/build/libs/logs/* ~/Downloads/
 
 
 ---
+# 3.타임존 설정(for Log)
+
 
 ## 로그 시간을 한국 시간대로 설정하는 방법
 - 3번만 진행해도 전부 해결 (EC2 서버 시스템 시간대 조정)
