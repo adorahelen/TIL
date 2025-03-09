@@ -41,3 +41,6 @@
 
 #### 2-1 VM (Oracle-VirtualBox, BroadCom-Vmware)
 
+![img.png](img/hycu/hackingSecurity0309v5.png)
+
+- 트러블 슈팅과정 (MacOnWindow.md 참조)
